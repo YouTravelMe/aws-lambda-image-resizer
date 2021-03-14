@@ -1,7 +1,6 @@
 {
   "name": "lambda-image-resize",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,8 +8,10 @@
   "author": "Youtravel.me",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
-    "file-type": "^14.1.4",
-    "gm": "^1.23.1"
-  }
+    "file-type": "^14.7.1",
+    "sharp": "^0.27.2"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
 }

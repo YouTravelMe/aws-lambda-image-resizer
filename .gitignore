@@ -1,2 +1,9 @@
 node_modules
+dist
+.idea/jsLibraryMappings.xml
+.DS_Store
 package-lock.json
+
+*.log
+*.zip
+*.tar*

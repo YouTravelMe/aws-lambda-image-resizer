@@ -1,0 +1,234 @@
+{
+  "Records": [
+    {
+      "cf": {
+        "config": {
+          "distributionDomainName": "d18nnfqemmpe9k.cloudfront.net",
+          "distributionId": "E2IEO6EV9YE67H",
+          "eventType": "origin-response",
+          "requestId": "ThssS-l4hJCQh5K_4aBfXwn4x3m1nG0zcPkSvoQ8-CHfmxzSqdcfQw=="
+        },
+        "request": {
+          "clientIp": "188.255.18.213",
+          "headers": {
+            "accept-language": [
+              {
+                "key": "Accept-Language",
+                "value": "ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7"
+              }
+            ],
+            "accept": [
+              {
+                "key": "Accept",
+                "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+              }
+            ],
+            "x-forwarded-for": [
+              {
+                "key": "X-Forwarded-For",
+                "value": "188.255.18.213"
+              }
+            ],
+            "user-agent": [
+              {
+                "key": "User-Agent",
+                "value": "Amazon CloudFront"
+              }
+            ],
+            "via": [
+              {
+                "key": "Via",
+                "value": "2.0 a0717ed92345b50cd6685d0335ee588f.cloudfront.net (CloudFront)"
+              }
+            ],
+            "accept-encoding": [
+              {
+                "key": "Accept-Encoding",
+                "value": "br,gzip"
+              }
+            ],
+            "pragma": [
+              {
+                "key": "Pragma",
+                "value": "no-cache"
+              }
+            ],
+            "host": [
+              {
+                "key": "Host",
+                "value": "youtravel.me"
+              }
+            ],
+            "cache-control": [
+              {
+                "key": "Cache-Control",
+                "value": "no-cache"
+              }
+            ]
+          },
+          "method": "GET",
+          "origin": {
+            "custom": {
+              "customHeaders": {},
+              "domainName": "youtravel.me",
+              "keepaliveTimeout": 5,
+              "path": "",
+              "port": 443,
+              "protocol": "https",
+              "readTimeout": 30,
+              "sslProtocols": [
+                "TLSv1",
+                "TLSv1.1",
+                "TLSv1.2"
+              ]
+            }
+          },
+          "querystring": "",
+          "uri": "/tr:w-1,h-1/upload/tours/6622/media/f7a/f7a606503109e62642e9c60aafff0481.png"
+        },
+        "response": {
+          "headers": {
+            "date": [
+              {
+                "key": "Date",
+                "value": "Fri, 12 Mar 2021 17:21:15 GMT"
+              }
+            ],
+            "set-cookie": [
+              {
+                "key": "Set-Cookie",
+                "value": "__cfduid=de035d749698c65552c3f0e9ab548ba971615569675; expires=Sun, 11-Apr-21 17:21:15 GMT; path=/; domain=.youtravel.me; HttpOnly; SameSite=Lax"
+              },
+              {
+                "key": "Set-Cookie",
+                "value": "PHPSESSID=P1znDk46ReeRnrgucFDPg4wfWCFLGl2d; expires=Sun, 14-Mar-2021 02:57:15 GMT; Max-Age=120960; path=/; domain=youtravel.me; HttpOnly"
+              },
+              {
+                "key": "Set-Cookie",
+                "value": "BITRIX_SM_LANGUAGE=ru; expires=Mon, 07-Mar-2022 17:21:15 GMT; Max-Age=31104000; path=/; domain=youtravel.me"
+              },
+              {
+                "key": "Set-Cookie",
+                "value": "BITRIX_SM_LANGUAGE_ID=ru; expires=Mon, 07-Mar-2022 17:21:15 GMT; Max-Age=31104000; path=/; domain=youtravel.me"
+              },
+              {
+                "key": "Set-Cookie",
+                "value": "BITRIX_SM_ABTEST_s1=3%7CA; expires=Mon, 07-Mar-2022 17:21:15 GMT; Max-Age=31104000; path=/; domain=youtravel.me; HttpOnly"
+              },
+              {
+                "key": "Set-Cookie",
+                "value": "BITRIX_SM_GUEST_ID=2458615; expires=Mon, 07-Mar-2022 17:21:15 GMT; Max-Age=31104000; path=/; domain=youtravel.me"
+              },
+              {
+                "key": "Set-Cookie",
+                "value": "BITRIX_SM_LAST_VISIT=12.03.2021+20%3A21%3A15; expires=Mon, 07-Mar-2022 17:21:15 GMT; Max-Age=31104000; path=/; domain=youtravel.me"
+              },
+              {
+                "key": "Set-Cookie",
+                "value": "BITRIX_SM_base_currency=EUR; expires=Mon, 07-Mar-2022 17:21:15 GMT; Max-Age=31104000; path=/; domain=youtravel.me"
+              }
+            ],
+            "p3p": [
+              {
+                "key": "P3P",
+                "value": "policyref=\"/bitrix/p3p.xml\", CP=\"NON DSP COR CUR ADM DEV PSA PSD OUR UNR BUS UNI COM NAV INT DEM STA\""
+              }
+            ],
+            "x-powered-cms": [
+              {
+                "key": "X-Powered-CMS",
+                "value": "Bitrix Site Manager (d317df706b7353c530c309b7f4702ef0)"
+              }
+            ],
+            "expires": [
+              {
+                "key": "Expires",
+                "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+              }
+            ],
+            "pragma": [
+              {
+                "key": "Pragma",
+                "value": "no-cache"
+              }
+            ],
+            "vary": [
+              {
+                "key": "Vary",
+                "value": "Accept-Encoding"
+              }
+            ],
+            "x-xss-protection": [
+              {
+                "key": "X-XSS-Protection",
+                "value": "1; mode=block"
+              }
+            ],
+            "cf-cache-status": [
+              {
+                "key": "CF-Cache-Status",
+                "value": "BYPASS"
+              }
+            ],
+            "cf-request-id": [
+              {
+                "key": "cf-request-id",
+                "value": "08c90dfb2e0000ee480a13b000000001"
+              }
+            ],
+            "expect-ct": [
+              {
+                "key": "Expect-CT",
+                "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+              }
+            ],
+            "report-to": [
+              {
+                "key": "Report-To",
+                "value": "{\"max_age\":604800,\"group\":\"cf-nel\",\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report?s=ovPPGiwX0ynz4A0uhD%2FfdmXpNWdflT5yU9AtvvsoU7B5o1XuAhjU%2BfUQkJE8%2Fw79VXr8R0o0UAXkd%2BpYi5fU5gKovSdNvxR6%2BP5uOKA%3D\"}]}"
+              }
+            ],
+            "nel": [
+              {
+                "key": "NEL",
+                "value": "{\"report_to\":\"cf-nel\",\"max_age\":604800}"
+              }
+            ],
+            "server": [
+              {
+                "key": "Server",
+                "value": "cloudflare"
+              }
+            ],
+            "cf-ray": [
+              {
+                "key": "CF-RAY",
+                "value": "62eeb2a51b68ee48-CDG"
+              }
+            ],
+            "content-encoding": [
+              {
+                "key": "Content-Encoding",
+                "value": "br"
+              }
+            ],
+            "content-type": [
+              {
+                "key": "Content-Type",
+                "value": "text/html; charset=UTF-8"
+              }
+            ],
+            "transfer-encoding": [
+              {
+                "key": "Transfer-Encoding",
+                "value": "chunked"
+              }
+            ]
+          },
+          "status": "404",
+          "statusDescription": "Not Found"
+        }
+      }
+    }
+  ]
+}
