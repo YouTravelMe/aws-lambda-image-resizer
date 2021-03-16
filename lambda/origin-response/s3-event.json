@@ -1,0 +1,145 @@
+{
+  "Records": [
+    {
+      "cf": {
+        "config": {
+          "distributionDomainName": "d18nnfqemmpe9k.cloudfront.net",
+          "distributionId": "E2IEO6EV9YE67H",
+          "eventType": "origin-response",
+          "requestId": "qr2goCwlsPa5M02-wHANZkUK5uqiio-shMs9wirBpE7fnNNzTnaKsQ=="
+        },
+        "request": {
+          "clientIp": "188.255.18.213",
+          "headers": {
+            "accept": [
+              {
+                "key": "Accept",
+                "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+              }
+            ],
+            "x-forwarded-for": [
+              {
+                "key": "X-Forwarded-For",
+                "value": "188.255.18.213"
+              }
+            ],
+            "user-agent": [
+              {
+                "key": "User-Agent",
+                "value": "Amazon CloudFront"
+              }
+            ],
+            "via": [
+              {
+                "key": "Via",
+                "value": "1.1 79beb37803543f9a0f0aa59f238cc43a.cloudfront.net (CloudFront)"
+              }
+            ],
+            "accept-encoding": [
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip"
+              }
+            ],
+            "pragma": [
+              {
+                "key": "Pragma",
+                "value": "no-cache"
+              }
+            ],
+            "host": [
+              {
+                "key": "Host",
+                "value": "ytme.static.s3.amazonaws.com"
+              }
+            ],
+            "cache-control": [
+              {
+                "key": "Cache-Control",
+                "value": "no-cache"
+              }
+            ]
+          },
+          "method": "GET",
+          "origin": {
+            "s3": {
+              "authMethod": "origin-access-identity",
+              "customHeaders": {},
+              "domainName": "ytme.static.s3.amazonaws.com",
+              "path": "",
+              "region": "us-east-1"
+            }
+          },
+          "querystring": "",
+          "uri": "/tr:w-800/20210221_172020.jpg"
+        },
+        "response": {
+          "headers": {
+            "x-amz-id-2": [
+              {
+                "key": "x-amz-id-2",
+                "value": "t0BYqX18Jso2FPWEzWQ69cfNY8/5u+L8PtAvyN5m3AQuVneqZJbV8PRVcD1sLJXdr4JKHlBb7y0="
+              }
+            ],
+            "x-amz-request-id": [
+              {
+                "key": "x-amz-request-id",
+                "value": "6RZ5YDZP479440TC"
+              }
+            ],
+            "date": [
+              {
+                "key": "Date",
+                "value": "Mon, 15 Mar 2021 16:47:32 GMT"
+              }
+            ],
+            "last-modified": [
+              {
+                "key": "Last-Modified",
+                "value": "Mon, 15 Mar 2021 16:36:04 GMT"
+              }
+            ],
+            "etag": [
+              {
+                "key": "ETag",
+                "value": "\"d47bf209c5d674ae9ede7d0ec56e4b34\""
+              }
+            ],
+            "x-amz-version-id": [
+              {
+                "key": "x-amz-version-id",
+                "value": "g9eG6Br0YAhVkhBaWSYYCCj6rmVNoOye"
+              }
+            ],
+            "accept-ranges": [
+              {
+                "key": "Accept-Ranges",
+                "value": "bytes"
+              }
+            ],
+            "server": [
+              {
+                "key": "Server",
+                "value": "AmazonS3"
+              }
+            ],
+            "content-type": [
+              {
+                "key": "Content-Type",
+                "value": "image/jpeg"
+              }
+            ],
+            "content-length": [
+              {
+                "key": "Content-Length",
+                "value": "726165"
+              }
+            ]
+          },
+          "status": "403",
+          "statusDescription": "OK"
+        }
+      }
+    }
+  ]
+}
