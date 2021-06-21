@@ -3,8 +3,8 @@
     {
       "cf": {
         "config": {
-          "distributionDomainName": "d18nnfqemmpe9k.cloudfront.net",
-          "distributionId": "E2IEO6EV9YE67H",
+          "distributionDomainName": "%DISTRIBUTION URL%.cloudfront.net",
+          "distributionId": "%DISTRIBUTION ID%",
           "eventType": "origin-response",
           "requestId": "qr2goCwlsPa5M02-wHANZkUK5uqiio-shMs9wirBpE7fnNNzTnaKsQ=="
         },
@@ -50,7 +50,7 @@
             "host": [
               {
                 "key": "Host",
-                "value": "ytme.static.s3.amazonaws.com"
+                "value": "%BUCKET_NAME%.s3.amazonaws.com"
               }
             ],
             "cache-control": [
@@ -65,13 +65,13 @@
             "s3": {
               "authMethod": "origin-access-identity",
               "customHeaders": {},
-              "domainName": "ytme.static.s3.amazonaws.com",
+              "domainName": "%BUCKET_NAME%.s3.amazonaws.com",
               "path": "",
               "region": "us-east-1"
             }
           },
           "querystring": "1412123",
-          "uri": "/webp/local/templates/youtravel/assets/i/sprite@2x.png"
+          "uri": "/webp/path/to/image.png"
         },
         "response": {
           "headers": {

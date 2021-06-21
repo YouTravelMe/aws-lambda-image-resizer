@@ -10,7 +10,7 @@ const s3 = new AWS.S3();
 
 const sharp = require('sharp');
 
-const bucketName = 'ytme.static';
+const bucketName = '%BUCKET_NAME%';
 /**
  * функция которая сохраняет файл в s3
  * @param bucket

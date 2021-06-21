@@ -1,5 +1,5 @@
 'use strict';
-const HostCustomOrigin = 'https://youtravel.me';
+const HostCustomOrigin = 'https://%ORIGIN_URL%';
 
 module.exports = class ImageRequest {
 
