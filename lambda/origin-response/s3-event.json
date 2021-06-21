@@ -70,8 +70,8 @@
               "region": "us-east-1"
             }
           },
-          "querystring": "",
-          "uri": "/original/tr:w-1000,h-200/upload/tours/12664/media/3a3/3a3bccf8b71e6741f1c53f435f104014.jpg"
+          "querystring": "1412123",
+          "uri": "/webp/local/templates/youtravel/assets/i/sprite@2x.png"
         },
         "response": {
           "headers": {
@@ -136,7 +136,7 @@
               }
             ]
           },
-          "status": "403",
+          "status": "200",
           "statusDescription": "OK"
         }
       }

@@ -9,7 +9,7 @@ module.exports = class ImageRequest {
         this.originUri = '';
         this.format = 'original';
         this.transformDefaults = {
-            w: 2200,
+            w: null,
             h: null
         };
         this.uriExp = /(\/(webp|original))?\/(tr:.+?\/)?(.*)/;
@@ -20,12 +20,17 @@ module.exports = class ImageRequest {
     getRequestUri(){
         return this.request.uri;
     }
+
+    getRequestQuery(){
+        return this.request.querystring;
+    }
+
     getOriginUri(){
         return this.originUri
     }
 
-    getOriginFullUrl(){
-        return `${HostCustomOrigin}${this.originUri}`;
+    getOriginFullUrl(query = false){
+        return `${HostCustomOrigin}${this.getOriginUri()}` + (!!query ? `?${this.getRequestQuery()}` : '');
     }
 
     getTransformOptions(){
@@ -51,6 +56,12 @@ module.exports = class ImageRequest {
                 }
                 transformOptions[item[0]] = item[1];
             }
+
+            if(!transformOptions.hasOwnProperty('w')
+                && transformOptions.hasOwnProperty('h')){
+                transformOptions.w = null;
+            }
+
             return {...this.transformDefaults, ...transformOptions};
         }
         return false;
@@ -59,11 +70,12 @@ module.exports = class ImageRequest {
     _init(request){
         this.request = request;
         let result = this.request.uri.match(this.uriExp);
-
         if(typeof result != "undefined" && result != null){
             this.format = result[2];
             if(typeof result[3] != "undefined"){
                 this.transformOptions = this.parseTransformOptions(result[3].replace(/\/$/, ""));
+            }else{
+                this.transformOptions = this.transformDefaults;
             }
             this.originUri = '/' + result[4];
         }else{

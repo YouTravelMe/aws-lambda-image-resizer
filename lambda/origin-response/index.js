@@ -11,12 +11,19 @@ const s3 = new AWS.S3();
 const sharp = require('sharp');
 
 const bucketName = 'ytme.static';
-
+/**
+ * функция которая сохраняет файл в s3
+ * @param bucket
+ * @param key
+ * @param buf
+ * @returns {Promise<*>}
+ */
 let saveToS3 = async (bucket, key, buf) => {
     await s3.putObject({
         Bucket: bucket,
         Key: key,
         Body: buf.buffer,
+        CacheControl: "public, s-maxage=15552000, max-age=15552000, must-revalidate",
         ContentEncoding: 'base64',
         ContentType: buf.mime,
     }).promise();
@@ -65,7 +72,7 @@ async function download(url, filePath) {
 }
 
 /**
- * https://github.com/awslabs/serverless-image-handler/blob/master/source/image-handler/image-request.js
+ * функция которая изменяет объект в зависимости от переданных в URI настроек
  * @param requestOptions
  * @param originStreamPath
  * @returns {Promise<{mime: string[], buffer: Buffer}>}
@@ -88,7 +95,9 @@ async function transformObject(requestOptions, originStreamPath){
         mime = mime[0] + '/' + format;
 
         originBuffer = await sharp(originBuffer,{ failOnError: false })
-            .resize(transformOptions.w, transformOptions.h)
+            .resize(transformOptions.w, transformOptions.h, {
+                withoutEnlargement: true
+            })
             .toFormat(format, {quality: 80})
             .toBuffer();
 
@@ -109,24 +118,36 @@ exports.handler = async (event, context, callback) => {
     const request = event.Records[0].cf.request;
     const requestOptions = new ImageRequest(request);
     const originStreamPath = '/tmp/originStream';
+    const originFullUrl = requestOptions.getOriginFullUrl(true);
+    let downloadFromOrigin = false;
 
-    if([403, 404].includes(parseInt(response.status))){
-        const originFullUrl = requestOptions.getOriginFullUrl();
+    if([403, 404].includes(parseInt(response.status))
+        || originFullUrl.indexOf('local/') >= 0){
+        downloadFromOrigin = true;
+    }
+    console.log("Download from origin: ", downloadFromOrigin);
+    if(!!downloadFromOrigin){
+
         try{
             console.log('Start download file from origin: ',  originFullUrl);
             let fileInfo = await download(originFullUrl, originStreamPath);
-            if(fileInfo.mime.indexOf('image') < 0){
+            let originBuffer = fs.readFileSync(originStreamPath);
+            const contentType = await FileType.fromBuffer(originBuffer);
+            let mime = contentType.mime.split('/');
+            if(mime[0] !== 'image'){
                 throw new Error("Response is not image!");
             }
 
             console.log('Start transform response');
             let transformBuffer = await transformObject(requestOptions, originStreamPath);
             console.log('Response has been transformed ', transformBuffer.mime);
+
             const headers = getResponseHeaders(fileInfo.headers, transformBuffer.mime);
             headers['transfer-encoding'] = response.headers['transfer-encoding'];
             headers['via'] = response.headers['via'];
             saveToS3(bucketName, requestOptions.getRequestUri().substring(1), transformBuffer);
-            console.log('Save s3 object as ', requestOptions.getRequestUri().substring(1));
+
+            console.log('Saved s3 object as ', requestOptions.getRequestUri().substring(1));
 
             callback(null, {
                 bodyEncoding: 'base64',
@@ -173,12 +194,12 @@ const getResponseHeaders = (originHeaders, mime = false) => {
     if(mime === false){
         headers["Content-Type"] = responseHeaders["content-type"];
     }else{
-        headers["Content-Type"] = [{ key: 'Content-Type', value: mime}];;
+        headers["Content-Type"] = [{ key: 'Content-Type', value: mime}];
     }
 
     headers["Expires"] = responseHeaders["expires"];
     headers["Last-Modified"] = responseHeaders["last-modified"];
-    headers["Cache-Control"] = responseHeaders["cache-control"];
+    headers["Cache-Control"] = [{key: "Cache-Control", value: "public, s-maxage=15552000, max-age=15552000, must-revalidate"}];
 
     return headers;
 }
